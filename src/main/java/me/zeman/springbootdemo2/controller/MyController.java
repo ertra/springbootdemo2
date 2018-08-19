@@ -10,11 +10,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 public class MyController {
 
-        @GetMapping("/one")
-        @ResponseBody
-        public String one() {
-            return "greeting";
-        }
+    @GetMapping("/one")
+    @ResponseBody
+    public String one() {
+        return "One response";
+    }
+
+    @GetMapping("/two")
+    @ResponseBody
+    public String two() {
+        return "Two response";
+    }
 
 
 }
