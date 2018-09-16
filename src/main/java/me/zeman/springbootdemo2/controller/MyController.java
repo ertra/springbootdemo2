@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Random;
+
 @Controller
 
 public class MyController {
@@ -22,5 +24,14 @@ public class MyController {
         return "Two response";
     }
 
+    @GetMapping("/three/{id}")
+    @ResponseBody
+    public String three() {
+        Random r = new Random();
+        int cnt = r.nextInt(10000000);
+
+        return "Three response: " + cnt;
+    }
 
 }
+

@@ -16,9 +16,9 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
 
-    @RequestMapping("/weather/{country}/{city}")
+    @RequestMapping("/weatherService/{country}/{city}")
     @ResponseBody
-    public String helloWorld(@PathVariable String country, @PathVariable String city ,HttpServletRequest request, HttpServletResponse response) {
+    public String weatherServiceInController(@PathVariable String country, @PathVariable String city ,HttpServletRequest request, HttpServletResponse response) {
 
         String weather = weatherService.getWeather(country,city);
 
