@@ -27,6 +27,7 @@ public class MyController {
     @GetMapping("/three/{id}")
     @ResponseBody
     public String three() {
+
         Random r = new Random();
         int cnt = r.nextInt(10000000);
 

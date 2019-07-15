@@ -13,6 +13,22 @@ public class WeatherService {
         String city = c2; // Prague
         String country = c1; // CZ
 
+        if (c2.equals("Lyon")){
+            try {
+                Thread.sleep(7000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (c2.equals("Nancy")){
+            try {
+                Thread.sleep(33000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
         String URL = "http://api.openweathermap.org/data/2.5/weather?q=" +
                 city +
                 "," +
