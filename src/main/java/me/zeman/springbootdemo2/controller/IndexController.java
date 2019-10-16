@@ -1,5 +1,6 @@
 package me.zeman.springbootdemo2.controller;
 
+import me.zeman.springbootdemo2.business.ShoppingCart;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ public class IndexController {
     @GetMapping("/")
     public String welcome(Map<String, Object> model) {
         model.put("time", new Date());
+        model.put("value", new ShoppingCart(100).getTotalValue());
         model.put("message", "My mustache template.");
         return "welcome";
     }
@@ -36,12 +38,10 @@ public class IndexController {
 
     @ResponseStatus(HttpStatus.SERVICE_UNAVAILABLE)
     private static class ServiceUnavailableException extends RuntimeException {
-
     }
 
     @ResponseStatus(HttpStatus.INSUFFICIENT_STORAGE)
     private static class InsufficientStorageException extends RuntimeException {
-
     }
 
 
